@@ -13,6 +13,7 @@
 
 .Tagname{
     font-size: 30px;
+    text-shadow: 0 0 3px #4e4141;
     font-weight: bolder;
     padding-left: 45px;
 }
