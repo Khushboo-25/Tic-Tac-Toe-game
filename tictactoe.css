@@ -8,32 +8,38 @@
 .container{
     width:100%;
     min-height: 100vh;
-    background-color: rgb(94, 72, 116);
+    background: rgb(15, 55, 14);
 }
 
 .Tagname{
-    font-size: 30px;
-    text-shadow: 0 0 3px #4e4141;
+    color:  aliceblue;
+    font-size: 70px;
+    text-shadow:  0px 10px 8px  rgb(22, 237, 3);
     font-weight: bolder;
     padding-left: 45px;
 }
 
 .tictactoe{
+    display: flex;
+    flex-direction: center;
+    justify-content: space-around;
     width: 100%;
-    background: rgb(224, 212, 158);
+    background: rgb(15, 55, 14);
     padding: 30px 0px  40px 0px;
 }
 .playground{
+    background: rgb(15, 55, 14);
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding-top: 90px;
+    justify-content: space-around;
+    padding-top: 3%;
 }
 .tictac{
-    background-color: rgb(135, 121, 147);
+    /* background-color: rgb(94, 72, 116); */
+    background:  aliceblue;
     padding: 35px;
     border-radius: 35px;
-     margin-right: 120px;
+     margin:0% 0% 0% 10%;
 }
 .grid{
     display: grid;
@@ -52,7 +58,7 @@
 }
 
 .box:hover{
-    background-color: rgb(85, 85, 85);
+    background-color: rgb(219, 219, 218);
     
 }
 
@@ -70,10 +76,12 @@
 }
 
 .gameInput{
-     padding-left: 100px;
+     padding: 0% 10% 0% 0%;
     
 }
 .rules{
+    font-size: 30px;
+    color: aliceblue;
     font-style: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .imgbox img{
@@ -82,16 +90,21 @@
 }
 
 h2{
-    background: #9c8b8b;
+    color:  aliceblue;
+    font-size: 40px;
+    text-shadow:  0px 0px 8px rgb(132, 158, 129);
+    background-color: rgb(71, 143, 63);
+    
     border-radius: 3px;
     padding: 3px;
     text-align: center;
 }
 #reset{
+    font-size: 30px;
     margin: 3px;
     padding: 1px 3px 1px 3px;
     border-radius: 7px;
 }
 #reset:hover{
-    background-color: rgb(88, 123, 123);
+    background-color: rgb(235, 246, 29);
 }
