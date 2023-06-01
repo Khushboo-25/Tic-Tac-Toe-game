@@ -6,7 +6,7 @@ let game=false;
 
 //function to change turn
 const changeTurn=()=>{
-    return turn ==="X"?"0" :"X"
+    return turn ==="X"?"0" :"X";
 }
 
 //function to check win
@@ -21,10 +21,10 @@ const checkWin=()=>{
         (box_text[a[2]].innerText===box_text[a[0]].innerText) &&(box_text[a[0]].innerText!=='')) 
             {
                 
-                document.querySelector('.gameInfo').innerText=box_text[a[0]].innerText+"Won"
-                gameover.play()
-                game=true
-                document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width="100px"
+                document.querySelector('.gameInfo').innerText=box_text[a[0]].innerText+" Won reset the game"
+                gameover.play();
+                game=true;
+                document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width="50%";
                 // break;
                 
             }
@@ -37,7 +37,7 @@ let boxes= document.getElementsByClassName('box');
 Array.from(boxes).forEach(Element=>{
     let box_text=Element.querySelector('.boxtext');
     Element.addEventListener('click',()=>{
-        if(box_text.innerText==='')
+        if(box_text.innerText==='' && game==false)
         {
              box_text.innerText=turn;
              turn =changeTurn();
@@ -49,6 +49,7 @@ Array.from(boxes).forEach(Element=>{
             document.getElementsByClassName("gameInfo")[0].innerText="Turn for "+turn;
             
         }
+        
     })
 })
 reset.addEventListener(
@@ -59,9 +60,9 @@ reset.addEventListener(
             Element.innerText=""
         });
         turn="X";
-        game=false
-        document.getElementsByClassName("gameInfo")[0].innerText="Turn for "+turn
-        document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width="0px"
+        game=false;
+        document.getElementsByClassName("gameInfo")[0].innerText="Turn for "+turn;
+        document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width="0px";
     }
 )
 //Game logic
