@@ -61,7 +61,8 @@
     border-bottom: 0;
 }
 .gameInput{
-     padding: 0% 10% 0% 0%;
+    width:60%;
+     padding: 0% 10% 0% 10%;
 }
 .rules{
     font-size: 30px;
