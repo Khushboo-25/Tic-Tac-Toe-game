@@ -4,29 +4,27 @@ let gameover= new Audio("gameover.wav");
 let turn="X";
 let game=false;
 
-//function to change turn
+// function to change turn
 const changeTurn=()=>{
     return turn ==="X"?"0" :"X";
 }
 
 //function to check win
 const checkWin=()=>{
-    let box_text=document.getElementsByClassName('boxtext');
+    let arr=document.getElementsByClassName('boxtext');
     let win=[   [0,1,2], [3,4,5], [6,7,8],
                 [0,3,6], [1,4,7], [2,5,8],
                 [0,4,8], [2,4,6]    ]
     win.forEach(a=>{
-        if((box_text[a[0]].innerText===box_text[a[1]].innerText) && 
-        (box_text[a[1]].innerText===box_text[a[2]].innerText) && 
-        (box_text[a[2]].innerText===box_text[a[0]].innerText) &&(box_text[a[0]].innerText!=='')) 
+            if((arr[a[0]].innerText===arr[a[1]].innerText) && 
+            (arr[a[1]].innerText===arr[a[2]].innerText) && 
+            (arr[a[2]].innerText===arr[a[0]].innerText) &&(arr[a[0]].innerText!=='')) 
             {
-                
-                document.querySelector('.gameInfo').innerText=box_text[a[0]].innerText+" Won reset the game"
+                document.querySelector('.gameInfo').innerText=arr[a[0]].innerText+" Won reset the game";
                 gameover.play();
                 game=true;
-                document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width="50%";
+                document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width="30%";
                 // break;
-                
             }
     })
 
@@ -35,11 +33,11 @@ const checkWin=()=>{
 let boxes= document.getElementsByClassName('box');
 
 Array.from(boxes).forEach(Element=>{
-    let box_text=Element.querySelector('.boxtext');
+    let arr=Element.querySelector('.boxtext');
     Element.addEventListener('click',()=>{
-        if(box_text.innerText==='' && game==false)
+        if(arr.innerText==='' && game==false)
         {
-             box_text.innerText=turn;
+             arr.innerText=turn;
              turn =changeTurn();
              audioturn.play();
              checkWin();
@@ -47,16 +45,15 @@ Array.from(boxes).forEach(Element=>{
         if(!game)
         {
             document.getElementsByClassName("gameInfo")[0].innerText="Turn for "+turn;
-            
         }
         
     })
 })
 reset.addEventListener(
     'click',()=>{
-        let box_text=document.querySelectorAll('.boxtext');
+        let arr=document.querySelectorAll('.boxtext');
         
-        Array.from(box_text).forEach(Element=>{
+        Array.from(arr).forEach(Element=>{
             Element.innerText=""
         });
         turn="X";
