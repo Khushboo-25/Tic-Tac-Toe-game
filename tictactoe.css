@@ -5,83 +5,68 @@
     font-family:'Times New Roman', Times, serif;
 }
 .container{
-    width:100%;
-    min-height: 100vh;
-    background: rgb(11, 33, 10);
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgb(196, 255, 254);
+    padding-bottom: 3%;
 }
 .tictactoe{
-    color:  aliceblue;
-    font-size: 70px;
-    text-shadow:  0px 10px 8px  rgb(22, 237, 3);
+    color:  rgb(46, 47, 92);
+    font-size: 3rem;
+    text-shadow:  0rem .2rem .2rem  rgb(3, 93, 237);
     font-weight: bolder;
     display: flex;
     flex-direction: center;
     justify-content: space-around;
-    padding: 30px 0px  40px 0px;
+    padding: 2rem 0rem  1rem 0rem;
 }
 .playground{
     display: flex;
-    align-items: center;
+    align-items: column;
     justify-content: space-around;
-    padding-top: 3%;
+    padding: 1rem;
 }
 .tictac{
-    background:  rgb(72, 148, 70);
-    padding: 35px;
-    border-radius: 35px;
-     margin:0% 0% 0% 10%;
+    background:  rgb(70, 110, 148);
+    padding: 2rem;
+    border-radius: .5rem;
+    margin-right: 10%;
 }
 .grid{
     display: grid;
+    background-color: white;
     grid-template-rows: repeat(3,8vw);
     grid-template-columns: repeat(3,8vw);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    
 }
 .box{
-    border: 3px solid rgb(33, 24, 24);
-    font-size: 7vw;
+    border: .1rem solid rgb(33, 24, 24);
+    font-size: 1.7rem;
     display: flex;
     justify-content:center ;
     align-items: center;
     cursor: pointer;
 }
-
 .box:hover{
-    background-color: rgb(108, 108, 106);
-    
+    background-color: rgb(130, 130, 128);
 }
-.gameInput{
-    width:60%;
-     padding: 0% 10% 0% 10%;
+.card{
+    width:30%;
+    padding: 0% 1% 0% 1%;
+    margin-right: 10%;
 }
-.rules{
-    font-size: 30px;
-    color: aliceblue;
-    font-style: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-.imgbox img{
-    width: 0;
-    transition: width is ease-in-out;
-}
-
-h2{
-    color:  aliceblue;
-    font-size: 40px;
+.card-header{
+    font-size: 1.5rem;
     text-shadow:  0px 0px 8px rgb(132, 158, 129);
-    background-color: rgb(71, 143, 63);
-    
-    border-radius: 3px;
-    padding: 3px;
+    padding: 1rem;
     text-align: center;
 }
-#reset{
-    font-size: 30px;
-    margin: 3px;
-    padding: 1px 3px 1px 3px;
-    border-radius: 7px;
+.card-body{
+    font-size: 1.2rem;
+    font-style: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-#reset:hover{
-    background-color: rgb(132, 160, 180);
+.card-img-top img{
+    width: 0;
+    transition: width is ease-in-out;
 }
