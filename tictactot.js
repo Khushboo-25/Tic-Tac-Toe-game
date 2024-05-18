@@ -1,12 +1,22 @@
 let audioturn =new Audio("turn.wav");
 let gameover= new Audio("gameover.wav");
 
-let turn="X";
+let turn;
+var x=Math.floor(2*Math.random());
+if(x==0)
+{
+    turn='O';
+}
+else
+{
+    turn='X';
+}
+document.getElementsByClassName("card-tittle")[0].innerText="Turn for "+turn;
 let game=false;
 
 // function to change turn
 const changeTurn=()=>{
-    return turn ==="X"?"0" :"X";
+    return turn ==="X"?"O" :"X";
 }
 
 //function to check win
@@ -20,10 +30,10 @@ const checkWin=()=>{
             (arr[a[1]].innerText===arr[a[2]].innerText) && 
             (arr[a[2]].innerText===arr[a[0]].innerText) &&(arr[a[0]].innerText!=='')) 
             {
-                document.querySelector('.gameInfo').innerText=arr[a[0]].innerText+" Won reset the game";
+                document.querySelector('.card-tittle').innerText=arr[a[0]].innerText+" Won reset the game";
                 gameover.play();
                 game=true;
-                document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width="30%";
+                document.querySelector('.card-img-top').getElementsByTagName('img')[0].style.width="50%";
                 // break;
             }
     })
@@ -44,7 +54,7 @@ Array.from(boxes).forEach(Element=>{
              }
         if(!game)
         {
-            document.getElementsByClassName("gameInfo")[0].innerText="Turn for "+turn;
+            document.getElementsByClassName("card-tittle")[0].innerText="Turn for "+turn;
         }
         
     })
@@ -56,10 +66,18 @@ reset.addEventListener(
         Array.from(arr).forEach(Element=>{
             Element.innerText=""
         });
-        turn="X";
+        
+        var x=Math.floor(2*Math.random());
+        if(x==0)
+        {
+            turn='O';
+        }
+        else
+        turn='X';
+        document.getElementsByClassName("card-tittle")[0].innerText="Turn for "+turn;
         game=false;
-        document.getElementsByClassName("gameInfo")[0].innerText="Turn for "+turn;
-        document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width="0px";
+        
+        document.querySelector('.card-img-top').getElementsByTagName('img')[0].style.width="0rem";
     }
 )
 //Game logic
